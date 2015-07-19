@@ -1,0 +1,319 @@
+<style type="text/css">
+#dummy{
+
+	z-index: 4;
+	height: 100px;
+	width: 100px;
+}
+
+svg text {
+  fill: #fff;
+}
+
+#map {
+    display: block;
+    position:absolute;
+    height:auto;
+    bottom:0;
+    top:0;
+    left:0;
+    right:0;
+    margin-top:50px; /* adjust top margin to your header height */
+}
+.ctn-filter{
+  position: absolute;
+  bottom: 0;
+    margin-left: 0px;
+}
+#AcciMonth {
+    z-index: 6;
+    left :207px;
+    bottom: 23px;  
+    position:absolute;
+    width: 60px;
+
+width: 60px;
+color: white;
+font-family: sans-serif;
+}
+
+
+
+#AcciWeekDay{
+
+z-index: 8;
+left: 13px;
+bottom: 287px;
+position: absolute;
+width: 0px;
+}
+.ctn-nav {
+  color: white;
+  box-shadow: "rgb(0, 0, 0) 0px 0px 17px 2px";
+  position: fixed;
+  right: 80px;
+  top: 30px;
+  z-index: 3;
+  opacity: 0.9;
+  height: 230px;
+  width: 300px;
+  cursor: pointer;
+  font-family: 'Noto Sans', sans-serif;
+}
+.navttl,
+.navidx {
+  text-align: center;
+}
+
+#time{
+
+	color: white;
+	z-index: 4;
+	height: 100px;
+	width: 100px;
+	position: absolute;
+    right: 80px;
+
+top: 70px;
+}
+
+#timeplay{
+	left: 15px;
+ bottom: 67px;
+	z-index: 6;
+	position: absolute;
+	opacity: .95;
+}
+
+.d3-tip {
+  line-height: 1;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: .3;
+  color: #fff;
+  border-radius: 0px;
+  text-align: center;
+
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+  opacity: .3;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+#pausebutton{
+z-index: 7;
+left: 0px;
+bottom: 0;
+height: 20px;
+width : 20px;
+	position: fixed;
+}
+
+	
+
+div, span, p, td {
+	font-family: Arial, sans-serif;
+}
+
+
+
+.ctn-nav {
+  box-shadow: "rgb(0, 0, 0) 0px 0px 17px 2px";
+  position: fixed;
+  right: 0px;
+  top: 30px;
+  z-index: 3;
+  opacity: 0.9;
+  height: 230px;
+  width: 300px;
+  cursor: pointer;
+  font-family: 'Noto Sans', sans-serif;
+}
+.navttl,
+.navidx {
+  text-align: center;
+}
+#acchour{
+
+    z-index: 5;
+    left :589px;
+    bottom: 23px;  
+    position:absolute;
+    width: 0px;
+
+
+
+}
+
+#ttest{
+
+    z-index: 5;
+    left :16px;
+    bottom: 43px;  
+    position:absolute;
+    width: 0px;
+
+}
+
+#timenut {
+z-index: 6;
+left :16px;
+bottom: 230px;  
+position:absolute;
+width: 0px;
+}
+
+#timenutbar {
+z-index: 7;
+left :20px;
+bottom: 53px;  
+position:absolute;
+width: 190px;
+}
+#timeincrease {
+z-index: 7;
+left :276px;
+bottom: 53px;  
+position:absolute;
+width: 190px;
+}
+
+#datetext {
+	z-index: 6;
+left :88px;
+bottom: 147px;  
+position:absolute;
+width: 60px;
+color: white;
+font-family: sans-serif;
+
+} 
+
+#butt1{
+z-index: 6;
+left :26px;
+bottom: 657px;  
+position:absolute;
+width: 180px;
+color: white;
+font-family: sans-serif;
+text-align: center;
+}
+
+#butt2{
+    z-index: 6;
+left :26px;
+bottom: 608px;  
+position:absolute;
+width: 180px;
+color: white;
+font-family: sans-serif;
+text-align: center;
+}
+
+
+
+#butt3{
+    z-index: 6;
+left :26px;
+bottom: 558px;  
+position:absolute;
+width: 180px;
+color: white;
+font-family: sans-serif;
+text-align: center;
+}
+
+#graphtitle{
+    z-index: 6;
+left :16px;
+bottom: 513px;  
+position:absolute;
+width: 200px;
+color: white;
+font-family: sans-serif;
+text-align: center;
+}
+
+
+#ave{
+
+	z-index: 6;
+left :276px;
+bottom: 75px;  
+position:absolute;
+width:190px;
+color: white;
+font-family: sans-serif;
+text-align: center;
+
+	}
+
+
+
+#pac-input{
+
+  z-index: 0;
+  left: 2px;
+  top:25px;
+  width: 211px;
+  opacity: 0.6;
+
+}
+
+    </style>
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+
+<!-- <loading-donut></loading-donut> -->
+ <google-time></google-time>
+ <donut-chart></donut-chart>
+<!-- <progress-bar></progress-bar> -->
+
+
+ <input type="range" id = "timenutbar" min="978325200000" max="1388552400000" step ="1" ng-model="bartime" >
+  <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+ <div id="map"></div>
+ <div id= "datetext">{{currentDate}}</div>
+ <div id="ave" >{{aas}}</div>
+ <input type="range" id = "timeincrease" min="86400000" max="2628000000" step ="1" ng-model="timeincrease" value = "604800000" >
+  <div id="acchour" ></div>
+   <div id="AcciWeekDay" ></div>
+<div id= "datetext">{{currentDate}}</div>
+<div id="butt1">{{button1}}</div>
+<div id="butt2">{{button2}}</div>
+<div id="butt3">{{button3}}</div>
+<div id="graphtitle">{{selectedgraph}}</div>
+ <div id="AcciMonth"></div>
+
+ 
+  <div id="ttest"> </div>
+ <div class="ctn-filter-all">
+  <div class="ctn-filter">
+
+  </div>
+
+</div>
+  </div>
+
+    </div>
+    <button id="pausebutton" ng-click="pause()">
+  Pause
+</button>

@@ -1,0 +1,606 @@
+
+ <style type="text/css">
+
+body { background-color: #333; }
+.loading { 
+  position: fixed;
+  float: left;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  padding: 0px;
+  width: 200px;
+  margin-top: -50px;
+  margin-left: -70px;
+}
+@-webkit-keyframes loading {
+  0% { border-top-color: #d13632; }
+  11% { border-top-color: #e2571e; }
+  22% { border-top-color: #E09128; }
+  33% { border-top-color: #ffe400; }
+  44% { border-top-color: #7dd132; }
+  50% { height: 100px; margin-top: 0px; }
+  55% { border-top-color: #32D152; }
+  66% { border-top-color: #32d15b; }
+  77% { border-top-color: #32bcd1; }
+  88% { border-top-color: #323ad1; }
+  99% { border-top-color: #cb32d1; }
+  100% { border-top-color: #cb32d1; }
+}
+@-moz-keyframes loading {
+  50% { height: 100px; margin-top: 0px; }
+}
+@-o-keyframes loading {
+  50% { height: 100px; margin-top: 0px; }
+}
+@keyframes loading {
+  50% { height: 100px; margin-top: 0px; }
+}
+@mixin inner() {
+  height: 10px;
+  width: 10px;
+  background-color: #fff;
+  display: inline-block;
+  margin-top: 90px;
+  -webkit-animation: loading 2.5s infinite;
+  -moz-animation: loading 2.5s infinite;
+  -o-animation: loading 2.5s infinite;
+  animation: loading 2.5s infinite;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-top: 5px solid #333;
+}
+@mixin loading() {
+  @for $i from 1 through 10 {
+    .loading-#{$i} { @include inner(); -webkit-animation-delay: $i/4+s; animation-delay: $i/4+s; }
+  }
+}
+.loading { @include loading(); }
+
+
+
+
+svg text {
+  fill: #fff;
+}
+
+#map {
+   z-index: 0;
+    display: block;
+    position:absolute;
+    height:auto;
+    bottom:0;
+    top:0;
+    left:0;
+    right:0;
+    /*margin-top:50px; */
+}
+.ctn-filter{
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+    /*margin-left: 0px;*/
+}
+
+#Accidoa {
+  z-index: 6;
+left: 18px;
+bottom: 51px;
+position: absolute;
+width: 0px;
+}
+
+#AcciWeekDay{
+
+    z-index: 5;
+    left :0px;
+    bottom: 23px;  
+    position:absolute;
+    width: 0px;
+
+}
+
+
+.ctn-nav {
+  box-shadow: "rgb(0, 0, 0) 0px 0px 17px 2px";
+  position: fixed;
+  right: 0px;
+  top: 30px;
+  z-index: 3;
+  opacity: 0.9;
+  height: 230px;
+  width: 300px;
+  cursor: pointer;
+  font-family: 'Noto Sans', sans-serif;
+}
+.navttl,
+.navidx {
+  text-align: center;
+}
+#AcciHour{
+    z-index: 5;
+    left :535px;
+    bottom: 23px;  
+    position:absolute;
+    width: 0px;
+
+}
+
+#ttest{
+    z-index: 5;
+    left :16px;
+    bottom: 23px;  
+    position:absolute;
+    width: 0px;
+
+}
+input,
+#pac-input{
+
+  z-index: 0;
+  left: 2px;
+  top:250px;
+  width: 211px;
+  opacity: 0.6;
+
+}
+
+
+#group_diff_plot{
+bottom: 24px !important;
+z-index: 0;
+right: 507px;
+/*top: 593px;*/
+width: 454px;
+opacity: .9;
+height: 0px;
+position: fixed;
+opacity: .9;
+
+}
+
+#box1{
+  z-index: 6;
+left :26px;
+top: 259px;  
+position:absolute;
+width: 85px;
+height: 85px;
+color: white;
+font-family: sans-serif;
+text-align: center;
+}
+#box2{
+  z-index: 6;
+left :122px;
+top: 259px;  
+position:absolute;
+width: 85px;
+height: 85px;
+color: white;
+font-family: sans-serif;
+text-align: center;
+}
+#pvalue {
+z-index: 6;
+left :15px;
+top: 405px;  
+position:absolute;
+width: 200px;
+height: 19px;
+color: white;
+font-family: sans-serif;
+text-align: center;
+}
+#bayesload{
+  z-index: 6;
+left :26px;
+top: 507px;  
+position:absolute;
+width: 85px;
+height: 85px;
+color: white;
+font-family: sans-serif;
+text-align: center;
+}
+
+ .tickLabel{
+color: white;
+}
+#group_diff_hist{
+bottom: 23px !important;
+z-index: 0;
+right: 38px;
+fill: white;
+/* top: 593px; */
+width: 454px;
+opacity: .9;
+height: 0px;
+position: fixed;
+color: white;
+}
+
+.legendLabel {
+  font-size:11px; line-height:0px; 
+}
+.item_title, .item_description { 
+    font-size:14px; line-height:125%; text-align: center;
+}
+.vert{
+  z-index: 10;
+}
+
+#dataBox {
+z-index: 4;
+position: absolute;
+background-color: gray;
+opacity: .8;
+left: 2%;
+top: 7%;
+width: 21%;
+height: 88%;
+}
+
+
+
+#mapLoading{
+  position: absolute !important;
+  top: 47%;
+  left: 54%;
+}
+
+#loadingText{
+  position: absolute;
+  top: 248%;
+  left: -12%;
+  width: 345%;
+  font-size: 28px;
+}
+
+.bar rect {
+  fill: steelblue;
+  shape-rendering: crispEdges;
+}
+
+.bar text {
+  fill: #fff;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+#donut1{
+  position: absolute;
+  left: 0%;
+  top: 23%;
+}
+
+#donut2{
+  position: absolute;
+  left: 0%;
+  top: 5%;
+}
+
+#donut3{
+  position: absolute;
+  top: 28%;
+  left: 0%;
+}
+
+#data1{
+
+    left: 17%;
+    top: 26%;
+    position: absolute;
+
+}
+.box {
+  font: 10px sans-serif;
+}
+
+.box line,
+.box rect,
+.box circle {
+  fill: #fff;
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.box .center {
+  stroke-dasharray: 3,3;
+}
+
+.box .outlier {
+  fill: none;
+  stroke: #ccc;
+}
+
+#more{
+position: absolute;
+top: 80%;
+left: 7%;
+}
+
+.dataButt{
+  min-width: 0px;
+}
+
+#loadingBayes{
+  position: absolute;
+  left: 40%;
+}
+#refresh{
+position: absolute;
+left: 79%;
+top: 5%;
+}
+
+.filterData {
+  opacity: .5;
+}
+
+    </style>
+<!-- <div ng-include="'components/navbar/navbar.html'"></div> -->
+
+
+
+ <google-vis></google-vis>
+  <input id="pac-input" type="text" placeholder="Location Search">
+ <div id="map"></div>
+
+                    <div id="group_diff_plot" style="height: 200px; bottom:0px ; ">
+                      
+                                      <md-tooltip md-direction="bottom right">
+          Run adaptive Metropolis-within-Gibbs sampler to get a probability distribution over differnce in mean.
+        </md-tooltip>
+                    </div> 
+
+                    <div id="group_diff_hist" style="height: 200px; bottom: 0px ;"></div>
+      
+           
+
+
+ <div id="Accidoa"></div>
+
+
+
+
+  <md-whiteframe class="md-whiteframe-z3"  id='dataBox'>
+
+<md-content >
+     <md-button class="md-fab md-mini md-primary" ng-disabled="!searchText"id= "refresh" aria-label="reloader" ng-click="updateData(searchText)">
+          <md-icon class="glyphicon glyphicon-refresh"  style="top: 4px;"></md-icon>
+        </md-button>
+  <form name="userForm">
+
+<md-input-container flex style="padding-bottom:1px; ">
+          <label>Splunk Search</label>
+          <input ng-enter="updateData(searchText)"  ng-model="searchText">
+        </md-input-container>
+        </form>
+
+ <section layout="row" layout-sm="row" layout-align="center center">
+ <md-button ng-click="filterData('age')"class="md-raised md-primary dataButt"  ng-class="{ 'filterData' : age }">
+
+        <md-tooltip md-direction="bottom right">
+          Analyze the ages of people in crash incidents (years)
+        </md-tooltip>
+
+        AGE</md-button>
+
+  <md-button ng-click="filterData('ems')" class="md-raised md-primary dataButt " ng-class="{ 'filterData' : ems }" >
+
+        <md-tooltip md-direction="bottom right">
+          Analyze the lag between emergency medical services arrival and accidents  (minutes)
+        </md-tooltip>
+
+
+  EMS LAG</md-button md-direction="bottom right">
+   <md-button ng-click="filterData('death')" class="md-raised md-primary dataButt" ng-class="{ 'filterData' : death }">
+
+        <md-tooltip>
+          Analyze the lag between accidents and time of death  (minutes)
+        </md-tooltip>
+
+
+   DEATH LAG</md-button>
+
+</section>
+
+        </md-content>
+
+
+<!-- 
+        <md-tooltip>
+          Refresh
+        </md-tooltip>
+
+ -->
+
+
+ <section layout="column" layout-sm="column" layout-align="center center">
+  <md-button style="width: 96%;" class="md-raised md-primary" ng-click="addbox1()" >Show Data Box</md-button>
+
+<!--  <section layout="column" layout-align="center center">
+
+  <p>Mean: {{box1Mean}}</p>
+  <p>Standard Error:{{box1SD}}</p>
+  <p>Event Count:{{box1N}}</p>
+
+
+ </section>
+ -->
+
+ </section>
+
+
+<box-plot id="plot" ng-show="rect1ON" data="y1" out="outlier.scale" ></box-plot>
+
+ <section layout="column" layout-sm="column" layout-align="center center">
+  <md-button style="width: 96%;" class="md-raised md-primary" ng-click="addbox2()" >Show Data Box</md-button>
+
+
+<!--  <section layout="column" layout-align="center center">
+
+  <p>Mean: {{box2Mean}}</p>
+  <p>Standard Error:{{box2SD}}</p>
+  <p>Event Count:{{box2N}}</p>
+
+ </section> -->
+
+
+ </section>
+
+
+
+<box-plot ng-show="rect2ON" id="plot" data="y2" out="outlier.scale" ></box-plot>
+
+
+
+<md-content style="position: absolute; top: 75%; left: 0%; width: 100%; height: 25%; background-color:grey;">
+<!-- <h4 style="text-align: center;">Search & Analysis</h4> -->
+ <section layout="row" ng-disabled="percentDone <100 && percentDone !== 0"layout-sm="column" layout-align="center center">
+  <md-button ng-disabled="percentDone <100 && percentDone !== 0" class="md-raised md-primary" ng-click="runbayes()" >
+
+        <md-tooltip md-direction="bottom right">
+          Run adaptive Metropolis-within-Gibbs sampler to get a probability distribution over differnce in mean.
+        </md-tooltip>
+
+
+  {{percentDone || "Run Bayesian Analysis" }} </md-button>
+
+
+
+ </section>
+
+    <!--     <md-progress-circular  id="loadingBayes" ng-hide="percentDone >100 || percentDone === 0" class="md-accent md-hue-1" value="{{percentDone}}" md-diameter="48" md-mode="determinate"></md-progress-circular>
+ -->
+
+
+
+
+        <section layout-align="center center" layout="row" layout-sm="row"  >
+          <md-button ng-click="toggleRight()"
+            class="md-raised md-primary">
+                    <md-tooltip md-direction="bottom right">
+                    Show other probability distributions on data.
+        </md-tooltip>
+            More Results
+          </md-button>
+
+
+          <md-button 
+            class="md-raised md-primary" ng-click="showAdvanced()">
+                    <md-tooltip md-direction="bottom right">
+                    Get list of recent jobs.
+        </md-tooltip>
+            Fetch Jobs
+          </md-button>
+
+
+        </section>
+
+  <section layout-align="center center" layout="row" layout-sm="row"  >
+
+  <form name="userForm" style="width: 38%">
+          <md-tooltip md-direction="bottom right">
+                    Set scale for outliers in box plots.
+        </md-tooltip>
+    <md-input-container flex style="padding-bottom:1px; ">
+      <label style= "color:white; ">Outlier Rule</label>
+      <input  style="width: 75%;" ng-model="outlier.scale">
+    </md-input-container>
+  </form>
+
+  <form name="userForm" style="width: 30%">
+                      <md-tooltip md-direction="bottom right">
+                    Set the number of samples for the Gibbs Sampler
+        </md-tooltip>
+    <md-input-container flex style="padding-bottom:1px; ">
+      <label style= "color:white; ">Samples</label>
+      <input  style="width: 75%;" ng-model="n_samples">
+    </md-input-container>
+  </form>
+
+
+  <form name="userForm" style="width: 30%">
+          <md-tooltip md-direction="bottom right">
+           Set the number of burn ins for the Gibbs Sampler
+        </md-tooltip>
+    <md-input-container flex style="padding-bottom:1px; ">
+      <label style= "color:white; ">Burn-In</label>
+      <input  style="width: 75%;" ng-model="n_burnin">
+    </md-input-container>
+  </form>
+
+
+
+</section>
+
+</md-content>
+
+
+
+
+  </md-whiteframe>
+
+ <section ng-hide="loading" id="mapLoading"layout-align="center center">
+      <md-progress-circular  class="md-accent md-hue-1" md-diameter="48" md-mode="indeterminate"></md-progress-circular>
+ </section>
+
+
+
+
+
+ <md-sidenav id="side" class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+      <md-toolbar class="md-theme-light">
+        <h1 class="md-toolbar-tools">Sidenav Right</h1>
+      </md-toolbar>
+      <md-content layout-padding style="background-color: gray;">
+  <div id="more_results_wrapper_div">
+                <div id="more_results_parent_div" class="sg-35 sgParent">
+                    <div id="more_results_div" class="sg-23 borderRight"><h2>More Results - The Rest of the Parameters!</h2> <p>Even though the difference between the means of the groups usually is the main interest, BEST also estimates other parameters. Except for the means and SDs of the groups BEST estimates a measure of to what degree there are outliers in the data that makes the distribution of the data deviate from normality. This measure is labeled "Normality" below where a normality estimate &lt; 1.5 indicates that the data isn't normally distributed. BEST is however robust to outliers to some degree while outliers are a problem for a classical t-test. More about the assumptions of BEST and the advantages of Bayesian estimation is found in <a href="http://www.indiana.edu/~kruschke/BEST/">Kruschke (2012)</a>.</p> 
+                    </div>
+                    <div id="filler_div" class="sg-11"><br/> </div>
+                </div>
+                <div id="group1_mean_plot_wrapper_div" class="sg-8"> <div class="item_title">Trace plot - Mean Group 1</div> <div id="group1_mean_plot" style="height: 175px;"></div> </div>
+                <div id="group1_mean_hist_wrapper_div" class="sg-8 borderRight"> <div class="item_title">Density - Mean Group 1</div> <div id="group1_mean_hist" style="height: 175px;"></div> </div>
+                <div id="group1_sd_plot_wrapper_div" class="sg-8"> <div class="item_title">Trace plot - SD Group 1</div> <div id="group1_sd_plot" style="height: 175px;"></div> </div>
+                <div id="group1_sd_hist_wrapper_div" class="sg-8"> <div class="item_title">Density - SD Group 1</div> <div id="group1_sd_hist" style="height: 175px;"></div> </div>
+                <div id="group2_mean_plot_wrapper_div" class="sg-8"><div class="item_title">Trace plot - Mean Group 2</div> <div id="group2_mean_plot" style="height: 175px;"></div> </div>
+                <div id="group2_mean_hist_wrapper_div" class="sg-8 borderRight"><div class="item_title">Density - Mean Group 2</div> <div id="group2_mean_hist" style="height: 175px;"></div> </div>
+                <div id="group2_sd_plot_wrapper_div" class="sg-8"><div class="item_title">Trace plot - SD Group 2</div> <div id="group2_sd_plot" style="height: 175px;"></div> </div>
+                <div id="group2_sd_hist_wrapper_div" class="sg-8"><div class="item_title">Density - SD Group 2</div> <div id="group2_sd_hist" style="height: 175px;"></div> </div>
+                <div id="normality_plot_wrapper_div" class="sg-8 "><div class="item_title">Trace plot - Normality</div> <div id="normality_plot" style="height: 175px;"></div> </div>
+                <div id="normality_hist_wrapper_div" class="sg-8 borderRight"> <div class="item_title">Density - Normality</div> <div id="normality_hist" style="height: 175px;"></div> </div>
+                
+                <div id="group_sd_diff_plot_wrapper_div" class="sg-8"><div class="item_title">Trace plot - Difference of SDs</div> <div id="sd_diff_plot" style="height: 175px;"></div> </div>
+                <div id="group_sd_diff_hist_wrapper_div" class="sg-8"><div class="item_title">Density -Difference of SDs</div> <div id="sd_diff_hist" style="height: 175px;"></div> </div>
+
+                <div id="effect_size_plot_wrapper_div" class="sg-8 "><div class="item_title">Trace plot - Effect Size</div> <div id="effect_size_plot" style="height: 175px;"></div> </div>
+                <div id="effect_size_wrapper_div" class="sg-8 borderRight"> 
+                    <div class="item_title">Density - Effect Size</div> 
+                    <div id="effect_size_hist" style="height: 175px;"></div>
+                    <div class="item_description">(μ₁ - μ₂) / sqrt( (σ₁² + σ₂²) / 2)</div>
+                </div>
+
+
+
+
+        <md-button ng-click="close()" class="md-primary">
+          Close Sidenav Right
+        </md-button>
+      </md-content>
+    </md-sidenav>
+
+
+
+
+
+                
+                
+
+

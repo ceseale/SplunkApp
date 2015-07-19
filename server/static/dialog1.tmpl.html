@@ -1,0 +1,26 @@
+<md-dialog aria-label="job">
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Recent Jobs</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="answer('not applicable')">
+        <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+   <section ng-hide="jobsList.length" layout-align="center center">
+        <md-progress-circular  class="md-primary md-hue-1" md-diameter="48" md-mode="indeterminate"></md-progress-circular>
+        </section>
+    <div ng-repeat="job in jobsList track by $index">
+   Job {{$index}} : {{job.search}} ID:{{job.sid}}
+    </div>
+  </md-dialog-content>
+  <div class="md-actions" layout="row">
+    <md-button ng-click="answer('useful')" class="md-primary">
+      Done
+    </md-button>
+  </div>
+  </form>
+</md-dialog>

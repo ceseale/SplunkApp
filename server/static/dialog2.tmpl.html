@@ -1,0 +1,31 @@
+<md-dialog aria-label="job">
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Log Into Splunk</h2>
+      <span flex></span>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+  <section layout="column" layout-align="center center">
+<input type="text" ng-model="username" placeholder="Enter Username">
+
+<input type="password" ng-model="password" placeholder="Enter Password">
+    <md-button ng-click="login()" class="md-primary">
+      Login
+    </md-button>
+<code ng-show="failed">LOGIN FAILED</code>
+</section>
+
+
+
+<em>This app requires Splunk to work.</em>
+
+  </md-dialog-content>
+  <div class="md-actions" layout="row">
+    <md-button ng-click="answer('useful')" class="md-primary">
+      Done
+    </md-button>
+  </div>
+  </form>
+</md-dialog>
